@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 
 // Small Schema to design Order Structure
-const orderItemSchema = new.mongoose.Schema({
+const orderItemSchema = new mongoose.Schema({
   productId:{
     type : mongoose.Schema.Types.ObjectId,
     ref : "Product" 
@@ -33,6 +33,6 @@ const orderSchema = new mongoose.Schema({
     enum : ["Pending","Cancelled","Delivered"],
     default : "Pending"
   }
-},{timestamps=true});
+},{timestamps:true});
 
 export const Order = mongoose.models("Order",orderSchema)
